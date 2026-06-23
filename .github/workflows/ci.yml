@@ -24,6 +24,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+        
+      - name: Debug checkout contents
+        run: |
+            pwd
+            ls -la
+            find . -maxdepth 2 | sort
+            shell: bash
+
       # Step 2: ติดตั้ง Node.js เวอร์ชัน 20
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
@@ -35,7 +43,7 @@ jobs:
       # ── Backend ──────────────────────────────
       - name: Install backend dependencies
         working-directory: backend   # เปลี่ยน directory ก่อนรัน
-        run: npm install                  # ci = clean install (เร็วกว่า npm install)
+        run: npm ci                     # ci = clean install (เร็วกว่า npm install)
 
       - name: Lint backend code
         working-directory: backend
