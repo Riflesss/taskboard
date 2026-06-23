@@ -24,14 +24,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-        
-      - name: Debug checkout contents
-        shell: bash
-        run: |
-          pwd
-          ls -la
-          find . -maxdepth 2 | sort
-
       # Step 2: ติดตั้ง Node.js เวอร์ชัน 20
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
