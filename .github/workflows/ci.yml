@@ -27,15 +27,15 @@ jobs:
       # Step 2: ติดตั้ง Node.js เวอร์ชัน 20
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'             # cache node_modules ให้ build เร็วขึ้น
-        #   cache-dependency-path: backend/package-lock.json
+        # with:
+        #   node-version: '20'
+        #   cache: 'npm'             # cache node_modules ให้ build เร็วขึ้น
+        # #   cache-dependency-path: backend/package-lock.json
 
       # ── Backend ──────────────────────────────
       - name: Install backend dependencies
         working-directory: backend   # เปลี่ยน directory ก่อนรัน
-        run: npm ci                  # ci = clean install (เร็วกว่า npm install)
+        run: npm install                  # ci = clean install (เร็วกว่า npm install)
 
       - name: Lint backend code
         working-directory: backend
