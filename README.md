@@ -1,6 +1,7 @@
 # TaskBoard — ระบบจัดการงาน
 
-![CI](https://github.com/<username>/taskboard/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Riflesss/taskboard/actions/workflows/ci.yml/badge.svg)
+![CD](https://github.com/Riflesss/taskboard/actions/workflows/cd.yml/badge.svg)
 
 ระบบ CRUD สำหรับจัดการงาน สร้างด้วย Express.js + PostgreSQL + Vue 3
 
@@ -13,13 +14,22 @@
 ## วิธีรัน (Local)
 ```bash
 # Clone
-git clone https://github.com/<username>/taskboard.git
+git clone https://github.com/Riflesss/taskboard.git
 cd taskboard
+
+# Copy ตัวอย่าง environment
+cp backend/.env.example backend/.env
 
 # รัน ด้วย Docker Compose
 docker compose up --build
 ```
 เข้า http://localhost เพื่อดู Frontend
+
+## วิธีรัน Production แบบดึงจาก Docker Hub
+```bash
+docker compose -f docker-compose.prod.yml pull
+docker compose -f docker-compose.prod.yml up -d
+```
 
 ## API Endpoints
 | Method | Path | คำอธิบาย |
@@ -29,3 +39,4 @@ docker compose up --build
 | POST | /api/tasks | สร้างงานใหม่ |
 | PUT | /api/tasks/:id | แก้ไขงาน |
 | DELETE | /api/tasks/:id | ลบงาน |
+powwer by github copirot & S DANG
