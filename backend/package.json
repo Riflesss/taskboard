@@ -212,6 +212,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "lint": "echo \"No lint configured yet\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
